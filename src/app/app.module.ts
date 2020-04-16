@@ -1,16 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { PruebaComponent } from './prueba/prueba.component';
-import { PruebaAutomaticaComponent } from './prueba-automatica/prueba-automatica.component';
-import { PruebaAutomaticaNuevaComponent } from './prueba-automatica-nueva/prueba-automatica-nueva.component';
+import { PersonaComponent } from './formularios/reactivos/persona.component';
+import { AnimalComponent } from './formularios/template-driven/animal.component';
 
 @NgModule({
-	declarations: [ AppComponent, PruebaComponent, PruebaAutomaticaComponent, PruebaAutomaticaNuevaComponent ],
-	imports: [ BrowserModule, AppRoutingModule ],
+	declarations: [ AppComponent, PersonaComponent, AnimalComponent ],
+	imports: [ BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule ],
 	providers: [],
 	bootstrap: [ AppComponent ]
 })

@@ -1,0 +1,9 @@
+Tipos de Formularios en Angular
+1 -Template Driven Form
+2 -Reactive Form
+
+Directivas
+1- FormControl: trackea el valor y el estado de validación de un input
+2- FormGroup: trackea el valor y el estado de validación de un grupo de inputs
+3- FormArray: trackea el valor y el estado de validación de un array de inputs
+
