@@ -1,0 +1,2 @@
+1- En el primer video vamos a ver como crear un componente.
+2- En el segundo video vamos a ver como agregar un FormControl básico

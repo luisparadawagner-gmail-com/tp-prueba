@@ -1,0 +1,24 @@
+<h1>Alumno</h1>
+
+<!-- Registramos el FormControl creado en la vista -->
+<label>Nombre
+    <input type="text" [formControl]="nombreControl">
+</label>
+
+<button type="text" (click)="setNombre()">Actualizar Nombre</button>
+
+<!-- Una de las formas de poder ver el valor del FormControl es a través de la interpolación: -->
+Nombre Interpolado: {{nombreControl.value}}
+
+<form [formGroup]='alumnoForm' (ngSubmit)=submit()>
+    <input type="text" formControlName="nombre">
+    <input type="text" formControlName="apellido">
+    <input type="text" formControlName="edad">
+    <div formGroupName="direccion">
+        <h3>Direccion</h3>
+        <input type="text" formControlName="calle">
+        <input type="text" formControlName="numero">
+    </div>
+
+    <button type="submit">Guardar</button>
+</form>
