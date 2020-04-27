@@ -8,13 +8,14 @@ import {  FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PersonaComponent } from './formularios/reactivos/persona.component';
 import { AnimalComponent } from './formularios/template-driven/animal.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 // Declaramos e importamos el componente en app.module para que sea visible por la aplicación
 import { AlumnoComponent } from './formularios/reactivos/Alumno/alumno.component';
 
 @NgModule({
 	declarations: [ AppComponent, PersonaComponent, AnimalComponent, AlumnoComponent ],
-	imports: [ BrowserModule, AppRoutingModule, ReactiveFormsModule ], // Lo agregamos en imports para importar todas sus directivas
+	imports: [ BrowserModule, AppRoutingModule, ReactiveFormsModule,FormsModule ], // Lo agregamos en imports para importar todas sus directivas
 	providers: [],
 	bootstrap: [ AppComponent ]
 })
