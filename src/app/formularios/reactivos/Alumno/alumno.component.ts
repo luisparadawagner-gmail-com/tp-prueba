@@ -1,7 +1,7 @@
 // Importamos el decorador Component desde angular core
 import { Component } from '@angular/core';
 // Importamos la directiva FormControl
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validator, Validators, FormArray } from '@angular/forms';
 
 // Declaramos el decorador Component y le seteamos el selector y el template o vista que va a tener asociado
 @Component({
@@ -12,6 +12,10 @@ export class AlumnoComponent {
 	// Esta va a ser la clase del componente donde vamos a declarar todas las propiedades y métodos. Exportamos la
 	// clase para que pueda ser importada desde otrolugar de la aplicación.
 
+	// Creamos el constructor de la clase
+	// Inyectamos el FormBuilder en el constructor
+	constructor(private fb: FormBuilder) {}
+
 	// Creamos una instancia del FormControl.
 	nombreControl = new FormControl('Juan'); // En el constructor inicializamos la instancia. En este caso esta vacía.
 
@@ -19,20 +23,29 @@ export class AlumnoComponent {
 		this.nombreControl.setValue('Pedro');
 	}
 
-	alumnoForm = new FormGroup({
-		nombre: new FormControl(''),
-		apellido: new FormControl(''),
-		edad: new FormControl(''),
-		direccion: new FormGroup({
-			calle: new FormControl(''),
-			numero: new FormControl('')
-		})
+	alumnoForm = this.fb.group({
+		nombre: [ 'Pedro', Validators.required ],
+		apellido: [ '' ],
+		edad: [ '' ],
+		direccion: this.fb.group({
+			calle: [ '' ],
+			numero: [ '' ]
+		}),
+		telefonos: this.fb.array([ this.fb.control('') ])
 	});
 
-	submit() {
-		debugger;
-		this.alumnoForm.value;
+	get telefonos() {
+		return this.alumnoForm.get('telefonos') as FormArray;
+	}
 
+	agregarTelefono() {
+		this.telefonos.push(this.fb.control(''));
+	}
+
+	submit() {
+		
+		this.alumnoForm.value;
+		// Must supply a value for form control with name: 'telefonos'.
 		this.alumnoForm.setValue({
 			nombre: 'Diego',
 			apellido: 'Maradona',
@@ -40,9 +53,10 @@ export class AlumnoComponent {
 			direccion: {
 				calle: 'Perez',
 				numero: 49
-			}
-        });
-        
-        this.alumnoForm.patchValue({edad: 60});
+			},
+			telefonos: ['']
+		});
+
+		this.alumnoForm.patchValue({ edad: 60 });
 	}
 }

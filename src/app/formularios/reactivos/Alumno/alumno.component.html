@@ -11,7 +11,9 @@
 Nombre Interpolado: {{nombreControl.value}}
 
 <form [formGroup]='alumnoForm' (ngSubmit)=submit()>
-    <input type="text" formControlName="nombre">
+    <label>Nombre
+        <input type="text" formControlName="nombre">
+    </label>
     <input type="text" formControlName="apellido">
     <input type="text" formControlName="edad">
     <div formGroupName="direccion">
@@ -19,6 +21,17 @@ Nombre Interpolado: {{nombreControl.value}}
         <input type="text" formControlName="calle">
         <input type="text" formControlName="numero">
     </div>
+    <div formArrayName="telefonos">
+        <h3>Teléfonos</h3>
+        <button (click)="agregarTelefono()">Agregar Teléfono</button>
 
+        <div *ngFor="let telefono of telefonos.controls; let i = index">
+            <label>
+                Teléfono <input type="text" [formControlName]="i">
+            </label>
+        </div>
+    </div>
+
+    Status Formulario: {{alumnoForm.status}}
     <button type="submit">Guardar</button>
 </form>
