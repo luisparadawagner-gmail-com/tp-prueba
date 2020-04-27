@@ -6,7 +6,8 @@ import { FormControl, FormGroup, FormBuilder, Validator, Validators, FormArray }
 // Declaramos el decorador Component y le seteamos el selector y el template o vista que va a tener asociado
 @Component({
 	selector: 'app-alumno',
-	templateUrl: './alumno.component.html'
+	templateUrl: './alumno.component.html',
+	styleUrls: [ './alumno.component.css' ]
 })
 export class AlumnoComponent {
 	// Esta va a ser la clase del componente donde vamos a declarar todas las propiedades y métodos. Exportamos la
@@ -19,9 +20,9 @@ export class AlumnoComponent {
 	// Creamos una instancia del FormControl.
 	nombreControl = new FormControl('Juan'); // En el constructor inicializamos la instancia. En este caso esta vacía.
 
-	setNombre() {
-		this.nombreControl.setValue('Pedro');
-	}
+	// setNombre() {
+	// 	this.nombreControl.setValue('Pedro');
+	// }
 
 	alumnoForm = this.fb.group({
 		nombre: [ 'Pedro', Validators.required ],
@@ -43,7 +44,6 @@ export class AlumnoComponent {
 	}
 
 	submit() {
-		
 		this.alumnoForm.value;
 		// Must supply a value for form control with name: 'telefonos'.
 		this.alumnoForm.setValue({
@@ -54,7 +54,7 @@ export class AlumnoComponent {
 				calle: 'Perez',
 				numero: 49
 			},
-			telefonos: ['']
+			telefonos: [ '' ]
 		});
 
 		this.alumnoForm.patchValue({ edad: 60 });

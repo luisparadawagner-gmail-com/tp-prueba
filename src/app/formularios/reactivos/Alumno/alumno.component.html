@@ -1,37 +1,48 @@
 <h1>Alumno</h1>
 
 <!-- Registramos el FormControl creado en la vista -->
-<label>Nombre
+<!-- <label>Nombre
     <input type="text" [formControl]="nombreControl">
-</label>
+</label> -->
 
-<button type="text" (click)="setNombre()">Actualizar Nombre</button>
+<!-- <button type="text" (click)="setNombre()">Actualizar Nombre</button> -->
 
 <!-- Una de las formas de poder ver el valor del FormControl es a través de la interpolación: -->
-Nombre Interpolado: {{nombreControl.value}}
+<!-- Nombre Interpolado: {{nombreControl.value}} -->
 
 <form [formGroup]='alumnoForm' (ngSubmit)=submit()>
-    <label>Nombre
-        <input type="text" formControlName="nombre">
-    </label>
-    <input type="text" formControlName="apellido">
-    <input type="text" formControlName="edad">
-    <div formGroupName="direccion">
-        <h3>Direccion</h3>
-        <input type="text" formControlName="calle">
-        <input type="text" formControlName="numero">
+    <div class="datosAlumno">
+        <label>Nombre
+            <input type="text" formControlName="nombre">
+        </label>
+        <label>Apellido
+            <input type="text" formControlName="apellido">
+        </label>
+        <label>Edad
+            <input type="text" formControlName="edad">
+        </label>
     </div>
+
+    <div formGroupName="direccion" class="direccion">
+        <h3>Dirección</h3>
+        <label>Calle
+            <input type="text" formControlName="calle">
+        </label>
+        <label>N°
+            <input type="text" formControlName="numero">
+        </label>
+    </div>
+
     <div formArrayName="telefonos">
         <h3>Teléfonos</h3>
-        <button (click)="agregarTelefono()">Agregar Teléfono</button>
-
-        <div *ngFor="let telefono of telefonos.controls; let i = index">
+        <div *ngFor="let telefono of telefonos.controls; let i = index" class="telefono">
             <label>
                 Teléfono <input type="text" [formControlName]="i">
             </label>
         </div>
+        <button (click)="agregarTelefono()">Agregar Teléfono</button>
     </div>
 
-    Status Formulario: {{alumnoForm.status}}
+    <!-- Status Formulario: {{alumnoForm.status}} -->
     <button type="submit">Guardar</button>
 </form>
