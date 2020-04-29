@@ -44,7 +44,7 @@ export class AlumnoComponent {
 	}
 
 	submit() {
-		this.alumnoForm.value();
+		this.alumnoForm.value;
 
 		this.alumnoForm.setValue({
 			nombre: 'Diego',
