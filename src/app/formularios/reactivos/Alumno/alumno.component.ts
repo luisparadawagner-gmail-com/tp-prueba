@@ -40,9 +40,6 @@ export class AlumnoComponent {
 	};
 
 	submit() {
-		debugger;
-
-
 		this.alumnoForm.value;
 		
 		this.alumnoForm.setValue({
