@@ -20,10 +20,6 @@ export class AlumnoComponent {
 	// Creamos una instancia del FormControl.
 	nombreControl = new FormControl('Juan'); // En el constructor inicializamos la instancia. En este caso esta vacía.
 
-	// setNombre() {
-	// 	this.nombreControl.setValue('Pedro');
-	// }
-
 	alumnoForm = this.fb.group({
 		nombre: [ 'Pedro', Validators.required ],
 		apellido: [ '' ],
@@ -41,21 +37,26 @@ export class AlumnoComponent {
 
 	agregarTelefono() {
 		this.telefonos.push(this.fb.control(''));
-	}
+	};
 
 	submit() {
-		this.alumnoForm.value();
+		debugger;
 
+
+		this.alumnoForm.value;
+		
 		this.alumnoForm.setValue({
 			nombre: 'Diego',
 			apellido: 'Maradona',
 			edad: 59,
 			direccion: {
-				calle: 'Perez'
+				calle: 'Perez',
+				numero: 33
 			},
-			telefonos: [ '' ]
+			telefonos: this.telefonos.value
 		});
 
 		this.alumnoForm.patchValue({ edad: 60 });
+		
 	}
 }

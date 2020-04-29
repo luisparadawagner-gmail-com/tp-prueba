@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 // Primero registramos el modulo para formularios reactivos
-import {  FormsModule } from '@angular/forms';
+import {  FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PersonaComponent } from './formularios/reactivos/persona.component';
@@ -14,7 +14,7 @@ import { AlumnoComponent } from './formularios/reactivos/Alumno/alumno.component
 
 @NgModule({
 	declarations: [ AppComponent, PersonaComponent, AnimalComponent, AlumnoComponent ],
-	imports: [ BrowserModule, AppRoutingModule, ReactiveFormsModule ], // Lo agregamos en imports para importar todas sus directivas
+	imports: [ BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule ], // Lo agregamos en imports para importar todas sus directivas
 	providers: [],
 	bootstrap: [ AppComponent ]
 })
