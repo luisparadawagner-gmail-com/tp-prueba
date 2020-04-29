@@ -44,14 +44,15 @@ export class AlumnoComponent {
 	}
 
 	submit() {
-		this.alumnoForm.value();
+		this.alumnoForm.value;
 
 		this.alumnoForm.setValue({
 			nombre: 'Diego',
 			apellido: 'Maradona',
 			edad: 59,
 			direccion: {
-				calle: 'Perez'
+				calle: 'Perez',
+				numero: '55',
 			},
 			telefonos: [ '' ]
 		});
