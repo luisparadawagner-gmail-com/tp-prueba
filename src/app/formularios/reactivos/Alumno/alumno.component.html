@@ -35,12 +35,15 @@
 
     <div formArrayName="telefonos">
         <h3>Teléfonos</h3>
+        <button type="button" (click)="agregarTelefono()">Agregar Teléfono</button>
+        <!--se agrego la propiedad type="button"-->
+
         <div *ngFor="let telefono of telefonos.controls; let i = index" class="telefono">
             <label>
                 Teléfono <input type="text" [formControlName]="i">
             </label>
         </div>
-        <button (click)="agregarTelefono()">Agregar Teléfono</button>
+        <!--<button (click)="agregarTelefono()">Agregar Teléfono</button>-->
     </div>
 
     <!-- Status Formulario: {{alumnoForm.status}} -->

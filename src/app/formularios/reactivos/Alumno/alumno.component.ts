@@ -44,16 +44,19 @@ export class AlumnoComponent {
 	}
 
 	submit() {
-		this.alumnoForm.value();
+		debugger;
+		this.alumnoForm.value;
+		//this.alumnoForm.value(); antes estaba colocado de esta forma, por lo se tomaba como función
 
 		this.alumnoForm.setValue({
 			nombre: 'Diego',
 			apellido: 'Maradona',
 			edad: 59,
 			direccion: {
-				calle: 'Perez'
+				calle: 'Perez',
+				numero: 20//se agrega la propiedad Numero, no agregada anteriormente
 			},
-			telefonos: [ '' ]
+			telefonos : this.telefonos.value
 		});
 
 		this.alumnoForm.patchValue({ edad: 60 });
