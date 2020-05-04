@@ -14,8 +14,17 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { AlumnoComponent } from './formularios/reactivos/Alumno/alumno.component';
 
 @NgModule({
-	declarations: [ AppComponent, PersonaComponent, AnimalComponent, AlumnoComponent ],
-	imports: [ BrowserModule, AppRoutingModule, ReactiveFormsModule,FormsModule ], // Lo agregamos en imports para importar todas sus directivas
+	declarations: [ 
+		AppComponent, 
+		PersonaComponent, 
+		AnimalComponent, 
+		AlumnoComponent 
+	],
+	imports: [ 
+		BrowserModule, 
+		AppRoutingModule, 
+		ReactiveFormsModule,
+		FormsModule ], // Lo agregamos en imports para importar todas sus directivas
 	providers: [],
 	bootstrap: [ AppComponent ]
 })
