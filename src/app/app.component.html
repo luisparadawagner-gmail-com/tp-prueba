@@ -5,6 +5,17 @@
 
 <!-- Usamos el selector app-alumno para poder inyectar el componente recién creado a otro componente, en este caso app.component -->
 <!-- En el navegador se puede ver el componente Alumno creado -->
+
+
+<!-- // Esto está prohibidísimo -->
+<script ></script>
+
+<div *ngIf="ver">
+    <app-animal-template></app-animal-template>
+</div>
+
 <app-alumno></app-alumno>
+
+<app-jugador></app-jugador>
 
 <router-outlet></router-outlet>

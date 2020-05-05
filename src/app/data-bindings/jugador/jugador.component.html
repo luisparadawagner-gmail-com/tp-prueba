@@ -1,0 +1,21 @@
+<p>jugador works!</p>
+
+<!-- ng g c data-bindings/jugador -->
+
+<!-- Interpolación es de una sola vía.  clase => vista-->
+<p>Nombre: {{nombreJugador}}</p>
+
+<ul>
+    <li *ngFor="let jugador of jugadores">
+        {{jugador}}
+    </li>
+</ul>
+
+<ul *ngIf="false">
+    <li *ngFor="let jugador of jugador1">
+        Nombre: {{jugador.nombre}}
+        Equipo: {{jugador.equipo}}
+        <p *ngIf="jugador.nombre === 'Leo Messi'">Muestra a Leo Messi</p>
+    </li>
+</ul>
+
