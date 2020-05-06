@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Jugador } from './../clases/Jugador';
 
 @Component({
@@ -7,6 +7,9 @@ import { Jugador } from './../clases/Jugador';
 	styleUrls: [ './jugador.component.css' ]
 })
 export class JugadorComponent implements OnInit {
+	@Input() equipoHijo: string;
+	@Output() equipoHijoEvento = new EventEmitter<string>();
+
 	equipo: string = 'Boca Juniors'; // Modificar el contenido del input y ver como se releja en la interpolación
 	verJugadores: boolean = true;
 	nombreJugador: string; // Propiedad
@@ -52,9 +55,15 @@ export class JugadorComponent implements OnInit {
 		this.getJugadores();
 	}
 
+	// Desde este método le envío otro equipo al padre
+	cambioEquipo() {		
+		this.equipoHijoEvento.emit('Independiente');
+	}
+
 	verJugador(jugador: any) {
 		alert('Jugador: ' + jugador);
 	}
+
 	getJugadores() {
 		// llamar al servicio de jugadores
 	}

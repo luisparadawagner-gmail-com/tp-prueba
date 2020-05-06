@@ -1,0 +1,4 @@
+<p>Esto es equipo!</p>
+
+<p>Equipo que viene desde el hijo: {{otroEquipoPadre}}</p>
+<app-jugador [equipoHijo]="equipoPadre" (equipoHijoEvento)="onCambioEquipo($event)"></app-jugador>
