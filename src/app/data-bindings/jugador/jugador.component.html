@@ -3,19 +3,47 @@
 <!-- ng g c data-bindings/jugador -->
 
 <!-- Interpolación es de una sola vía.  clase => vista-->
-<p>Nombre: {{nombreJugador}}</p>
+<p>Nombre Interpolado: {{nombreJugador}}</p>
+<p>Sueldo: {{jugador.sueldo | currency: 'USD'}}</p>
 
 <ul>
     <li *ngFor="let jugador of jugadores">
+        <!-- Directiva *ngFor que itera sobre el array -->
         {{jugador}}
     </li>
 </ul>
 
-<ul *ngIf="false">
+<ul *ngIf="verJugadores">
     <li *ngFor="let jugador of jugador1">
-        Nombre: {{jugador.nombre}}
-        Equipo: {{jugador.equipo}}
+        <!-- Interpolación del array de objeto jugador1. Accedemos a la propiedad de cada objeto.Ej: nombre, equipo -->
+        Nombre: {{jugador.nombre | lowercase}}
+        Equipo: {{jugador.equipo | uppercase}}
         <p *ngIf="jugador.nombre === 'Leo Messi'">Muestra a Leo Messi</p>
     </li>
 </ul>
 
+<div>
+    <!-- Para pasar datos desde la Clase al Template, podemos usar property binding: -->
+    <h4>Property Binding</h4>
+    <img [src]="imagenJugador" [title]="tooltip" [width]="anchoImg" [height]="altoImg">
+    <!-- La propiedad a modificar se encierra en corchetes y la propiedad que se pasa por valor se encierra en comillas -->
+</div>
+
+<div>
+    <h4>Con interpolación conseguimos lo mismo</h4>
+    <img src={{imagenJugador}} title={{tooltip}} width={{anchoImg}} height={{altoImg}}>
+</div>
+
+<div>
+    <h4>Event Binding</h4>
+    <!-- El nombre del evente se encierra entre paréntesis y el nombre del método entre comillas -->
+    <button (click)="verJugador(nombreJugador)">Ver Jugador</button>
+</div>
+
+<div>
+    <h4>Two way Data Binding</h4>
+    <!-- Es una forma de pasar datos de doble vía, se usa la expresión "Banana in the Box [()]" 
+    Se usan los corchetes para usar el Property Binding desde la clase al template y los paréntesis para enviar datos
+desdeel template hacia la clase -->
+    <input [(ngModel)]="equipo"> <p>{{equipo | uppercase}} </p>
+</div>
