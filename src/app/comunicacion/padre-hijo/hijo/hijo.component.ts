@@ -13,6 +13,7 @@ export class HijoComponent implements OnInit {
 	@Output() apodo = new EventEmitter<string>();
 
 	nombre = new FormControl('Lucho');
+	imagen: string = 'input-diagram-target-source.svg';
 
 	constructor() {}
 
