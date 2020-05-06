@@ -13,9 +13,11 @@ import { AnimalComponent } from './formularios/template-driven/animal.component'
 import { AlumnoComponent } from './formularios/reactivos/Alumno/alumno.component';
 import { JugadorComponent } from './data-bindings/jugador/jugador.component';
 import { EquipoComponent } from './data-bindings/equipo/equipo.component';
+import { PadreComponent } from './comunicacion/padre-hijo/padre/padre.component';
+import { HijoComponent } from './comunicacion/padre-hijo/hijo/hijo.component';
 
 @NgModule({
-	declarations: [ AppComponent, PersonaComponent, AnimalComponent, AlumnoComponent, JugadorComponent, EquipoComponent ],
+	declarations: [ AppComponent, PersonaComponent, AnimalComponent, AlumnoComponent, JugadorComponent, EquipoComponent, PadreComponent, HijoComponent ],
 	imports: [ BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule ], // Lo agregamos en imports para importar todas sus directivas
 	providers: [],
 	bootstrap: [ AppComponent ]
