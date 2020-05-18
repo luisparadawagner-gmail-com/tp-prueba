@@ -15,10 +15,39 @@ import { JugadorComponent } from './data-bindings/jugador/jugador.component';
 import { EquipoComponent } from './data-bindings/equipo/equipo.component';
 import { PadreComponent } from './comunicacion/padre-hijo/padre/padre.component';
 import { HijoComponent } from './comunicacion/padre-hijo/hijo/hijo.component';
+import { FormMaterialComponent } from './angular-material/form-material/form-material.component';
+
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
-	declarations: [ AppComponent, PersonaComponent, AnimalComponent, AlumnoComponent, JugadorComponent, EquipoComponent, PadreComponent, HijoComponent ],
-	imports: [ BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule ], // Lo agregamos en imports para importar todas sus directivas
+	declarations: [
+		AppComponent,
+		PersonaComponent,
+		AnimalComponent,
+		AlumnoComponent,
+		JugadorComponent,
+		EquipoComponent,
+		PadreComponent,
+		HijoComponent,
+		FormMaterialComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		ReactiveFormsModule,
+		FormsModule,
+		MatInputModule,
+		MatButtonModule,
+		BrowserAnimationsModule,
+		MatCardModule,
+		MatGridListModule,
+		MatSelectModule
+	], // Lo agregamos en imports para importar todas sus directivas
 	providers: [],
 	bootstrap: [ AppComponent ]
 })

@@ -1,0 +1,36 @@
+<div class="">
+    <mat-card class="container">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Título de Formulario</mat-card-title>
+            <mat-card-subtitle>Angular Material</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+
+            <mat-grid-list cols="3" rowHeight="100px">
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Ingrese Comida</mat-label>
+                    <input matInput placeholder="Asado">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>bebida Preferida</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let bebida of bebidas" [value]="bebida.value">
+                            {{bebida.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </mat-grid-list>
+
+        </mat-card-content>
+        <mat-card-actions>
+            <div>
+                <button class="botones" mat-flat-button color="primary">Guardar</button>
+                <button class="botones" mat-flat-button color="warn">Cancelar</button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</div>
