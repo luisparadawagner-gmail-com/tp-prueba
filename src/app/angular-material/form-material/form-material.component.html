@@ -9,19 +9,20 @@
 
             <mat-grid-list cols="3" rowHeight="100px">
 
+                <mat-form-field>
+                    <mat-label>bebida Preferida</mat-label>
+                    <mat-select (selectionChange)="selectBebida($event)">
+                        <mat-option *ngFor="let bebida of bebidas" [value]="bebida.value" >
+                            {{bebida.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
                 <mat-form-field class="example-full-width">
                     <mat-label>Ingrese Comida</mat-label>
                     <input matInput placeholder="Asado">
                 </mat-form-field>
 
-                <mat-form-field>
-                    <mat-label>bebida Preferida</mat-label>
-                    <mat-select>
-                        <mat-option *ngFor="let bebida of bebidas" [value]="bebida.value">
-                            {{bebida.viewValue}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
 
                 <mat-slide-toggle (change)="cambiarColor($event)">Elegir color</mat-slide-toggle>
             </mat-grid-list>
@@ -29,7 +30,8 @@
         </mat-card-content>
         <mat-card-actions>
             <div>
-                <button [ngStyle]="{'color': 'white','background-color': 'blue', margin: '5px', padding: '5px'}" mat-flat-button >Guardar</button>
+                <button [ngStyle]="{'color': 'white','background-color': 'blue', margin: '5px', padding: '5px'}"
+                    mat-flat-button>Guardar</button>
                 <button class="botones" mat-flat-button color="warn">Cancelar</button>
             </div>
         </mat-card-actions>

@@ -23,11 +23,17 @@ export class FormMaterialComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	cambiarColor(event) {    
-		if (event.checked) {      
+	cambiarColor(event) {
+		if (event.checked) {
 			this.color = true;
 		} else {
 			this.color = false;
+		}
+	}
+
+	selectBebida(bebida) {
+		if (bebida.value === '2') {
+			alert('Se seleccionó Jugo: ');
 		}
 	}
 }
