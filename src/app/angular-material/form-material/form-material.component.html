@@ -5,7 +5,7 @@
             <mat-card-title>Título de Formulario</mat-card-title>
             <mat-card-subtitle>Angular Material</mat-card-subtitle>
         </mat-card-header>
-        <mat-card-content>
+        <mat-card-content [ngStyle]="{'background': color ? 'red' : 'transparent'}">
 
             <mat-grid-list cols="3" rowHeight="100px">
 
@@ -23,6 +23,7 @@
                     </mat-select>
                 </mat-form-field>
 
+                <mat-slide-toggle (change)="cambiarColor($event)">Elegir color</mat-slide-toggle>
             </mat-grid-list>
 
         </mat-card-content>

@@ -17,7 +17,18 @@ export class FormMaterialComponent implements OnInit {
 		{ value: '2', viewValue: 'Jugo' }
 	];
 
+	color: boolean;
+
 	constructor() {}
 
 	ngOnInit(): void {}
+
+	cambiarColor(event) {
+    debugger;
+		if (event.checked) {      
+			this.color = true;
+		} else {
+			this.color = false;
+		}
+	}
 }

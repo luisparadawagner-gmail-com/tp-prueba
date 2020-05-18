@@ -23,6 +23,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
 	declarations: [
@@ -46,7 +47,8 @@ import { MatSelectModule } from '@angular/material/select';
 		BrowserAnimationsModule,
 		MatCardModule,
 		MatGridListModule,
-		MatSelectModule
+		MatSelectModule,
+		MatSlideToggleModule
 	], // Lo agregamos en imports para importar todas sus directivas
 	providers: [],
 	bootstrap: [ AppComponent ]
