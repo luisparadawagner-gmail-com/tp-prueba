@@ -23,8 +23,7 @@ export class FormMaterialComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	cambiarColor(event) {
-    debugger;
+	cambiarColor(event) {    
 		if (event.checked) {      
 			this.color = true;
 		} else {
