@@ -5,16 +5,15 @@
 
             <!-- Aplicamos la dirtectiva appColor a este elemento -->
             <mat-card-title>Título de Formulario</mat-card-title>
-            Colorrr: {{pepe}}
             <mat-card-subtitle>Angular Material</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content [ngStyle]="{'background': color ? 'red' : 'transparent'}">
 
             <p [appColor]="colorTexto" defaultColor="violet">
-                Highlight me too!
+                Poné el cursor encima!
             </p>
-            <mat-grid-list cols="3" rowHeight="100px">
 
+            <mat-grid-list cols="3" rowHeight="100px">
                 <mat-form-field>
                     <mat-label>bebida Preferida</mat-label>
                     <mat-select (selectionChange)="selectBebida($event)">
@@ -23,14 +22,12 @@
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
-
                 <mat-form-field class="example-full-width">
-                    <mat-label>Ingrese Comida</mat-label>
-                    <input matInput placeholder="Asado">
+                    <mat-label>Ingrese Un Número</mat-label>
+                    <input [(ngModel)]="numero" matInput placeholder="Asado">
                 </mat-form-field>
-
-
                 <mat-slide-toggle (change)="cambiarColor($event)">Elegir color</mat-slide-toggle>
+                <h1 *appNumero="numero">Numero: {{numero}}</h1>
             </mat-grid-list>
 
         </mat-card-content>

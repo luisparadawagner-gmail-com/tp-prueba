@@ -19,16 +19,18 @@ export class FormMaterialComponent implements OnInit {
 
 	color: boolean;
 	colorTexto: string = 'brown';
+	numero: Number = 20;
 
 	constructor() {}
 
 	ngOnInit(): void {}
 
 	cambiarColor(event) {
-		if (event.checked) {      
-      this.colorTexto = 'blue';   
+		if (event.checked) {
+      this.color = true;
+			this.colorTexto = 'blue';
 		} else {
-      this.color = false;      
+			this.color = false;
 		}
 	}
 
