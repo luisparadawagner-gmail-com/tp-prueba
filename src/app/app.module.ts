@@ -25,6 +25,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
+// Directiva
+import { AppColorDirective } from './directivas/app-color.directive';
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -35,7 +38,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 		EquipoComponent,
 		PadreComponent,
 		HijoComponent,
-		FormMaterialComponent
+		FormMaterialComponent,
+		AppColorDirective // Se debe declarar la directiva importada
 	],
 	imports: [
 		BrowserModule,

@@ -2,17 +2,23 @@
     <mat-card class="container">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
+
+            <!-- Aplicamos la dirtectiva appColor a este elemento -->
             <mat-card-title>Título de Formulario</mat-card-title>
+            Colorrr: {{pepe}}
             <mat-card-subtitle>Angular Material</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content [ngStyle]="{'background': color ? 'red' : 'transparent'}">
 
+            <p [appColor]="colorTexto" defaultColor="violet">
+                Highlight me too!
+            </p>
             <mat-grid-list cols="3" rowHeight="100px">
 
                 <mat-form-field>
                     <mat-label>bebida Preferida</mat-label>
                     <mat-select (selectionChange)="selectBebida($event)">
-                        <mat-option *ngFor="let bebida of bebidas" [value]="bebida.value" >
+                        <mat-option *ngFor="let bebida of bebidas" [value]="bebida.value">
                             {{bebida.viewValue}}
                         </mat-option>
                     </mat-select>
