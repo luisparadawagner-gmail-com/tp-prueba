@@ -2,5 +2,10 @@
 
 <p>El Componente padre muestra el apodo: {{apodo}}</p>
 
-<app-hijo [varHijo]="varPadre" [aliasHijo]="varPadreAlias" [nombreMayuscula]="nombreMayuscula" (apodo)="onApodo($event)"></app-hijo>
+
+<app-hijo [varHijo]="varPadre" [aliasHijo]="varPadreAlias" [nombreMayuscula]="nombreMayuscula"
+    (apodo)="onApodo($event)" #hijo></app-hijo>
 <!-- [propiedad]="expresion" -->
+
+<p>Variable seteada en el hijo: {{hijo.animalHijo}}</p>
+<button (click)="hijo.vieneDelPadre('Luis')">mandar Nombre al Hijo</button>

@@ -18,10 +18,12 @@ export class HijoComponent implements OnInit {
 	// Inicio Comunicación con get y set
 	private _diegomaradona = '';
 
+	animalHijo: string = 'Caballo';
+
 	@Input()
 	set nombreMayuscula(nombre: string) {
 		debugger;
-		this._diegomaradona = (nombre && nombre.toUpperCase());
+		this._diegomaradona = nombre && nombre.toUpperCase();
 	}
 	get nombreMayuscula(): string {
 		return this._diegomaradona;
@@ -39,5 +41,9 @@ export class HijoComponent implements OnInit {
 		} else {
 			this.apodo.emit('No se el apodo');
 		}
+	}
+
+	vieneDelPadre(nombre) {
+		alert('Vengo de mi papá: ' + nombre);
 	}
 }
