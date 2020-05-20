@@ -11,12 +11,14 @@ export class PadreComponent implements OnInit {
 
 	apodo: string;
 
+	nombreMayuscula: string = 'diego maradona';
+
 	constructor() {}
 
 	ngOnInit(): void {}
 
 	onApodo(apodo) {
-    debugger;
+		debugger;
 		this.apodo = apodo;
 	}
 }

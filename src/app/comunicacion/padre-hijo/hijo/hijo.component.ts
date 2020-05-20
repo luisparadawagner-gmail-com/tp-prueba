@@ -15,6 +15,19 @@ export class HijoComponent implements OnInit {
 	nombre = new FormControl('Lucho');
 	imagen: string = 'input-diagram-target-source.svg';
 
+	// Inicio Comunicación con get y set
+	private _diegomaradona = '';
+
+	@Input()
+	set nombreMayuscula(nombre: string) {
+		debugger;
+		this._diegomaradona = (nombre && nombre.toUpperCase());
+	}
+	get nombreMayuscula(): string {
+		return this._diegomaradona;
+	}
+	// Fin Comunicación con get y set
+
 	constructor() {}
 
 	ngOnInit(): void {}
