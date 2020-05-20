@@ -7,7 +7,7 @@
             <mat-card-title>Título de Formulario</mat-card-title>
             <mat-card-subtitle>Angular Material</mat-card-subtitle>
         </mat-card-header>
-        <mat-card-content [ngStyle]="{'background': color ? 'red' : 'transparent'}">
+        <mat-card-content class="content" [ngStyle]="{'background': color ? 'red' : 'transparent'}">
 
             <p [appColor]="colorTexto" defaultColor="violet">
                 Poné el cursor encima!
@@ -28,6 +28,12 @@
                 </mat-form-field>
                 <mat-slide-toggle (change)="cambiarColor($event)">Elegir color</mat-slide-toggle>
                 <h1 *appNumero="numero">Numero: {{numero}}</h1>
+
+                <h1>Fecha sin Pipe: {{fecha}}</h1>
+                <h1>Fecha con Pipe: {{fecha | date}}</h1>
+                <h1>Fecha con Pipe y parámetro: {{fecha | date: 'dd/MM/yyyy'}}</h1>
+                <h1>Fecha con Pipe encadenados: {{fecha | date: 'fullDate':'es-ES' | uppercase}}</h1>
+                <h1>Pipe Personal: {{palabraRara | caracteresRaros:'mayuscula'}}</h1>
             </mat-grid-list>
 
         </mat-card-content>

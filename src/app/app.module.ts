@@ -29,6 +29,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { AppColorDirective } from './directivas/attributo-directiva-color.directive';
 import { AppNumeroDirective } from './directivas/estructura-directiva.directive';
 
+//Pipes
+import { CaracteresRarosPipe } from './pipes/caracteres-raros.pipe';
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -41,7 +44,8 @@ import { AppNumeroDirective } from './directivas/estructura-directiva.directive'
 		HijoComponent,
 		FormMaterialComponent,
 		AppColorDirective, // Se debe declarar la directiva importada
-		AppNumeroDirective
+		AppNumeroDirective,
+		CaracteresRarosPipe
 	],
 	imports: [
 		BrowserModule,

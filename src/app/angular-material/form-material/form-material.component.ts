@@ -20,6 +20,8 @@ export class FormMaterialComponent implements OnInit {
 	color: boolean;
 	colorTexto: string = 'brown';
 	numero: Number = 20;
+	fecha: Date = new Date();
+	palabraRara: string = 'NEUQU�N_';
 
 	constructor() {}
 
@@ -27,7 +29,7 @@ export class FormMaterialComponent implements OnInit {
 
 	cambiarColor(event) {
 		if (event.checked) {
-      this.color = true;
+			this.color = true;
 			this.colorTexto = 'blue';
 		} else {
 			this.color = false;
