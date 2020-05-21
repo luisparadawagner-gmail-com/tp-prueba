@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { HijoComponent } from './../hijo/hijo.component';
 
 @Component({
 	selector: 'app-padre',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: [ './padre.component.css' ]
 })
 export class PadreComponent implements OnInit {
+	@ViewChild(HijoComponent) private viewChildHijo: HijoComponent;
+
 	varPadre: string = 'Vengo del componente padre';
 	varPadreAlias: string = 'Vengo del padre usando un alias en el componente hijo';
 
@@ -20,5 +23,9 @@ export class PadreComponent implements OnInit {
 	onApodo(apodo) {
 		debugger;
 		this.apodo = apodo;
+	}
+
+	llamarViewChildHijo(pajaro) {
+		this.viewChildHijo.vieneDelPadre(pajaro);
 	}
 }
