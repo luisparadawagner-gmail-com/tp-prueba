@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatMenuModule } from '@angular/material/menu';
 
 // Directiva
 import { AppColorDirective } from './directivas/attributo-directiva-color.directive';
@@ -58,7 +59,8 @@ import { CaracteresRarosPipe } from './pipes/caracteres-raros.pipe';
 		MatCardModule,
 		MatGridListModule,
 		MatSelectModule,
-		MatSlideToggleModule
+		MatSlideToggleModule,
+		MatMenuModule
 	], // Lo agregamos en imports para importar todas sus directivas
 	providers: [],
 	bootstrap: [ AppComponent ]

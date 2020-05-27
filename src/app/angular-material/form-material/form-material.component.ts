@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 interface Bebidas {
 	value: string;
@@ -23,9 +24,15 @@ export class FormMaterialComponent implements OnInit {
 	fecha: Date = new Date();
 	palabraRara: string = 'NEUQU�N_';
 
-	constructor() {}
+	constructor(private route: ActivatedRoute) {}
 
-	ngOnInit(): void {}
+	numeroParam: Number;
+	ngOnInit(): void {
+		this.route.paramMap.subscribe((params) => {
+			debugger;
+			let pepe = params;
+		});
+	}
 
 	cambiarColor(event) {
 		if (event.checked) {
