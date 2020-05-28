@@ -6,7 +6,7 @@ import { PadreComponent } from './comunicacion/padre-hijo/padre/padre.component'
 import { EquipoComponent } from './data-bindings/equipo/equipo.component';
 
 const routes: Routes = [
-	{ path: 'form-material/:numero', component: FormMaterialComponent },
+	{ path: 'form-material/:"numero"', component: FormMaterialComponent },
 	{
 		path: 'padre-component',
 		component: PadreComponent,

@@ -1,38 +1,15 @@
 <h1>Componente por defecto</h1>
 
+<!-- Angular Router -->
+
 <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-<mat-menu #menu="matMenu">    
-    <button mat-menu-item [routerLink]="['/form-material',title]" routerLinkActive="active">Form
+<mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="['/form-material',numero]" routerLinkActive="active">Form
         Material</button>
-    <button mat-menu-item routerLink="/padre-component" routerLinkActive="active">Componente Padre</button>    
+    <button mat-menu-item routerLink="/padre-component" routerLinkActive="active">Componente Padre</button>
 </mat-menu>
-
-
-<!-- <app-reactive-persona></app-reactive-persona>    
-<app-animal-template></app-animal-template> -->
-
-<!-- Usamos el selector app-alumno para poder inyectar el componente recién creado a otro componente, en este caso app.component -->
-<!-- En el navegador se puede ver el componente Alumno creado -->
-
 
 <!-- // Esto está prohibidísimo -->
 <!-- <script ></script> -->
-
-<!-- <div >
-    <app-animal-template></app-animal-template>
-</div> -->
-
-<!-- <app-alumno></app-alumno> -->
-
-<!-- <app-jugador></app-jugador> -->
-
-<!-- <app-equipo></app-equipo> -->
-
-<!-- <app-padre></app-padre> -->
-
-<!-- Directivas y Pipes -->
-<!-- <app-form-material></app-form-material> -->
-
-
 
 <router-outlet></router-outlet>

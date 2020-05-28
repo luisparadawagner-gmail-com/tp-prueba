@@ -30,7 +30,7 @@ export class FormMaterialComponent implements OnInit {
 	ngOnInit(): void {
 		this.route.paramMap.subscribe((params) => {
 			debugger;
-			let pepe = params;
+			let tituloParam = params;
 		});
 	}
 
